@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update>
+    <sys_documentation element="app" label="app" language="en" table="var__m_sys_hub_step_ext_input_78e11c0c0759d01025e2f9fc7c1ed0cf">
+        <sys_documentation action="INSERT_OR_UPDATE">
+            <element>app</element>
+            <help/>
+            <hint/>
+            <label>app</label>
+            <language>en</language>
+            <name>var__m_sys_hub_step_ext_input_78e11c0c0759d01025e2f9fc7c1ed0cf</name>
+            <plural/>
+            <sys_class_name>sys_documentation</sys_class_name>
+            <sys_created_by>admin</sys_created_by>
+            <sys_created_on>2020-06-04 11:46:14</sys_created_on>
+            <sys_id>b0e11c0c0759d01025e2f9fc7c1ed0dc</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_name>app</sys_name>
+            <sys_package display_value="Backup" source="x_264406_backup">0ebc18470781101025e2f9fc7c1ed0be</sys_package>
+            <sys_policy/>
+            <sys_scope display_value="Backup">0ebc18470781101025e2f9fc7c1ed0be</sys_scope>
+            <sys_update_name>sys_documentation_var__m_sys_hub_step_ext_input_78e11c0c0759d01025e2f9fc7c1ed0cf_app_en</sys_update_name>
+            <sys_updated_by>admin</sys_updated_by>
+            <sys_updated_on>2020-06-04 11:46:14</sys_updated_on>
+            <url/>
+            <url_target/>
+        </sys_documentation>
+    </sys_documentation>
+</record_update>

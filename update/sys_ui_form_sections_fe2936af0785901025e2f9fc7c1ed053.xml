@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update>
+    <sys_ui_form_sections form_id="fe2936af0785901025e2f9fc7c1ed053" sys_domain="global" table="sys_flow_step_definition_input" version="3">
+        <sys_ui_form_section action="INSERT_OR_UPDATE">
+            <position>0</position>
+            <sys_created_by>admin</sys_created_by>
+            <sys_created_on>2020-06-03 10:40:09</sys_created_on>
+            <sys_domain>global</sys_domain>
+            <sys_domain_path>/</sys_domain_path>
+            <sys_id>be2976af0785901025e2f9fc7c1ed0af</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_overrides/>
+            <sys_ui_form display_value="sys_flow_step_definition_input" name="sys_flow_step_definition_input" sys_domain="global" view="Default view">fe2936af0785901025e2f9fc7c1ed053</sys_ui_form>
+            <sys_ui_section caption="NULL" display_value="" name="sys_flow_step_definition_input" sys_domain="global" view="Default view">7e2936af0785901025e2f9fc7c1ed05a</sys_ui_section>
+            <sys_updated_by>admin</sys_updated_by>
+            <sys_updated_on>2020-06-03 10:40:09</sys_updated_on>
+        </sys_ui_form_section>
+        <sys_ui_form_section action="INSERT_OR_UPDATE">
+            <position>1</position>
+            <sys_created_by>admin</sys_created_by>
+            <sys_created_on>2020-06-03 10:40:09</sys_created_on>
+            <sys_domain>global</sys_domain>
+            <sys_domain_path>/</sys_domain_path>
+            <sys_id>762936af0785901025e2f9fc7c1ed05a</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_overrides/>
+            <sys_ui_form display_value="sys_flow_step_definition_input" name="sys_flow_step_definition_input" sys_domain="global" view="Default view">fe2936af0785901025e2f9fc7c1ed053</sys_ui_form>
+            <sys_ui_section caption="Reference Specification" display_value="Reference Specification" name="sys_flow_step_definition_input" sys_domain="global" view="Default view">3e2936af0785901025e2f9fc7c1ed056</sys_ui_section>
+            <sys_updated_by>admin</sys_updated_by>
+            <sys_updated_on>2020-06-03 10:40:09</sys_updated_on>
+        </sys_ui_form_section>
+        <sys_ui_form_section action="INSERT_OR_UPDATE">
+            <position>2</position>
+            <sys_created_by>admin</sys_created_by>
+            <sys_created_on>2020-06-03 10:40:09</sys_created_on>
+            <sys_domain>global</sys_domain>
+            <sys_domain_path>/</sys_domain_path>
+            <sys_id>8b2976af0785901025e2f9fc7c1ed0b5</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_overrides/>
+            <sys_ui_form display_value="sys_flow_step_definition_input" name="sys_flow_step_definition_input" sys_domain="global" view="Default view">fe2936af0785901025e2f9fc7c1ed053</sys_ui_form>
+            <sys_ui_section caption="Choice List Specification" display_value="Choice List Specification" name="sys_flow_step_definition_input" sys_domain="global" view="Default view">322976af0785901025e2f9fc7c1ed0b3</sys_ui_section>
+            <sys_updated_by>admin</sys_updated_by>
+            <sys_updated_on>2020-06-03 10:40:09</sys_updated_on>
+        </sys_ui_form_section>
+        <sys_ui_form_section action="INSERT_OR_UPDATE">
+            <position>3</position>
+            <sys_created_by>admin</sys_created_by>
+            <sys_created_on>2020-06-03 10:40:09</sys_created_on>
+            <sys_domain>global</sys_domain>
+            <sys_domain_path>/</sys_domain_path>
+            <sys_id>3e2976af0785901025e2f9fc7c1ed0b2</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_overrides/>
+            <sys_ui_form display_value="sys_flow_step_definition_input" name="sys_flow_step_definition_input" sys_domain="global" view="Default view">fe2936af0785901025e2f9fc7c1ed053</sys_ui_form>
+            <sys_ui_section caption="Default Value" display_value="Default Value" name="sys_flow_step_definition_input" sys_domain="global" view="Default view">b22976af0785901025e2f9fc7c1ed0b0</sys_ui_section>
+            <sys_updated_by>admin</sys_updated_by>
+            <sys_updated_on>2020-06-03 10:40:09</sys_updated_on>
+        </sys_ui_form_section>
+        <sys_ui_form action="INSERT_OR_UPDATE">
+            <name>sys_flow_step_definition_input</name>
+            <roles/>
+            <sys_class_name>sys_ui_form</sys_class_name>
+            <sys_created_by>admin</sys_created_by>
+            <sys_created_on>2020-06-03 10:40:08</sys_created_on>
+            <sys_domain>global</sys_domain>
+            <sys_domain_path>/</sys_domain_path>
+            <sys_id>fe2936af0785901025e2f9fc7c1ed053</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_name>sys_flow_step_definition_input</sys_name>
+            <sys_overrides/>
+            <sys_package display_value="Backup" source="x_264406_backup">0ebc18470781101025e2f9fc7c1ed0be</sys_package>
+            <sys_policy/>
+            <sys_scope display_value="Backup">0ebc18470781101025e2f9fc7c1ed0be</sys_scope>
+            <sys_update_name>sys_ui_form_sections_fe2936af0785901025e2f9fc7c1ed053</sys_update_name>
+            <sys_updated_by>admin</sys_updated_by>
+            <sys_updated_on>2020-06-03 10:40:08</sys_updated_on>
+            <sys_user/>
+            <view display_value="Default view" name="NULL">Default view</view>
+            <view_name/>
+        </sys_ui_form>
+    </sys_ui_form_sections>
+</record_update>

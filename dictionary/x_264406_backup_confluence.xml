@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?><database>
+    <element label="Confluence" max_length="40" name="x_264406_backup_confluence" type="collection">
+        <element choice="1" dependent="application_name;" dependent_on_field="application_name;" label="Action Name" max_length="32" name="action_name" reference="sys_hub_action_type_definition" type="reference" use_dependent_field="true">
+            <choice/>
+        </element>
+        <element calculation="(function calculatedFieldValue(current) {&#13;&#10;&#13;&#10;&#9;return '';  // return the calculated value&#13;&#10;&#13;&#10;})(current);" label="Application Name" max_length="32" name="application_name" reference="sys_scope" type="reference" use_dependent_field="true"/>
+        <index name="index">
+            <element name="application_name"/>
+        </index>
+        <index name="index2">
+            <element name="action_name"/>
+        </index>
+    </element>
+</database>

@@ -25,7 +25,7 @@
         <sys_domain>global</sys_domain>
         <sys_domain_path>/</sys_domain_path>
         <sys_id>f7ad204707c1101025e2f9fc7c1ed089</sys_id>
-        <sys_mod_count>1</sys_mod_count>
+        <sys_mod_count>2</sys_mod_count>
         <sys_name>Copy of Get Contents</sys_name>
         <sys_overrides/>
         <sys_package display_value="Backup" source="x_264406_backup">0ebc18470781101025e2f9fc7c1ed0be</sys_package>
@@ -33,7 +33,7 @@
         <sys_scope display_value="Backup">0ebc18470781101025e2f9fc7c1ed0be</sys_scope>
         <sys_update_name>sys_hub_action_type_definition_f7ad204707c1101025e2f9fc7c1ed089</sys_update_name>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2020-06-01 11:13:47</sys_updated_on>
+        <sys_updated_on>2020-06-04 11:48:45</sys_updated_on>
         <system_level>false</system_level>
         <type/>
     </sys_hub_action_type_definition>
@@ -69,10 +69,10 @@
         <sys_created_by>admin</sys_created_by>
         <sys_created_on>2020-06-01 11:13:46</sys_created_on>
         <sys_id>fbad204707c1101025e2f9fc7c1ed092</sys_id>
-        <sys_mod_count>1</sys_mod_count>
+        <sys_mod_count>2</sys_mod_count>
         <sys_scope display_value="Backup">0ebc18470781101025e2f9fc7c1ed0be</sys_scope>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2020-06-01 11:13:46</sys_updated_on>
+        <sys_updated_on>2020-06-04 11:48:45</sys_updated_on>
     </sys_hub_step_instance>
     <sys_variable_value action="delete_multiple" query="document_key=fbad204707c1101025e2f9fc7c1ed092"/>
     <sys_variable_value action="INSERT_OR_UPDATE">
@@ -97,10 +97,10 @@
         <sys_created_by>admin</sys_created_by>
         <sys_created_on>2020-06-01 11:13:46</sys_created_on>
         <sys_id>0cbd204707c1101025e2f9fc7c1ed0a4</sys_id>
-        <sys_mod_count>0</sys_mod_count>
+        <sys_mod_count>1</sys_mod_count>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2020-06-01 11:13:46</sys_updated_on>
-        <value>{"type":"ADV_NV","value":[]}</value>
+        <sys_updated_on>2020-06-04 11:48:45</sys_updated_on>
+        <value>{"type":"ADV_NV","value":[{"attributes":{"mandatory":false,"omit_if_empty":false},"name":"expand","value":"body.storage"}]}</value>
         <variable display_value="">4328e2fb47222200b4fad7527c9a7164</variable>
     </sys_variable_value>
     <sys_variable_value action="INSERT_OR_UPDATE">
@@ -499,14 +499,14 @@
         <sys_created_by>admin</sys_created_by>
         <sys_created_on>2020-06-01 11:13:46</sys_created_on>
         <sys_id>48bd204707c1101025e2f9fc7c1ed0a8</sys_id>
-        <sys_mod_count>3</sys_mod_count>
+        <sys_mod_count>5</sys_mod_count>
         <sys_name/>
         <sys_package/>
         <sys_policy/>
         <sys_scope display_value="Backup">0ebc18470781101025e2f9fc7c1ed0be</sys_scope>
         <sys_update_name/>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2020-06-01 11:13:47</sys_updated_on>
+        <sys_updated_on>2020-06-04 11:48:45</sys_updated_on>
         <table_reference>false</table_reference>
         <text_index>false</text_index>
         <unique>false</unique>
@@ -535,10 +535,10 @@
         <sys_created_by>admin</sys_created_by>
         <sys_created_on>2020-06-01 11:13:46</sys_created_on>
         <sys_id>fbad204707c1101025e2f9fc7c1ed092</sys_id>
-        <sys_mod_count>1</sys_mod_count>
+        <sys_mod_count>2</sys_mod_count>
         <sys_scope display_value="Backup">0ebc18470781101025e2f9fc7c1ed0be</sys_scope>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2020-06-01 11:13:46</sys_updated_on>
+        <sys_updated_on>2020-06-04 11:48:45</sys_updated_on>
     </sys_hub_step_instance>
     <sys_variable_value action="delete_multiple" query="document_key=fbad204707c1101025e2f9fc7c1ed092"/>
     <sys_variable_value action="INSERT_OR_UPDATE">
@@ -563,10 +563,10 @@
         <sys_created_by>admin</sys_created_by>
         <sys_created_on>2020-06-01 11:13:46</sys_created_on>
         <sys_id>0cbd204707c1101025e2f9fc7c1ed0a4</sys_id>
-        <sys_mod_count>0</sys_mod_count>
+        <sys_mod_count>1</sys_mod_count>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2020-06-01 11:13:46</sys_updated_on>
-        <value>{"type":"ADV_NV","value":[]}</value>
+        <sys_updated_on>2020-06-04 11:48:45</sys_updated_on>
+        <value>{"type":"ADV_NV","value":[{"attributes":{"mandatory":false,"omit_if_empty":false},"name":"expand","value":"body.storage"}]}</value>
         <variable display_value="">4328e2fb47222200b4fad7527c9a7164</variable>
     </sys_variable_value>
     <sys_variable_value action="INSERT_OR_UPDATE">
