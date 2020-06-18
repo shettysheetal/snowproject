@@ -9,7 +9,11 @@
         <name>ConfluenceSetStructure</name>
         <script><![CDATA[var ConfluenceSetStructure = Class.create();
 ConfluenceSetStructure.prototype = {
-    initialize: function() {},
+    initialize: function() {
+
+    },
+
+
     setDescription: function(inputs) {
         var test = inputs.description;
         var descr = test.substring(test.indexOf("<p>") + 4, test.indexOf("</p>"));
@@ -17,14 +21,12 @@ ConfluenceSetStructure.prototype = {
     },
 
     setErrorMessage: function(inputs) {
-        var test = inputs.description;
-        var start = test.indexOf("<p><b>Error Messages:</b>");
-        var rest = test.substring(start);
+        var rest = inputs.description;
+        rest = rest.substring(rest.indexOf("<p><b>Error Messages:</b>"));
         rest = rest.substring(0, rest.indexOf("</p>"));
-        start = rest.indexOf("<li>");
-        rest = rest.substring(start);
+        rest = rest.substring(rest.indexOf("<li>"));
         rest = rest.replace(/<li>/g, "");
-        rest = rest.replace("</ul>", "");
+        rest = rest.substring(0, rest.lastIndexOf("</ul>"));
         var err_arr = rest.split("</li>");
         for (var str in err_arr) {
             err_arr[str] = (err_arr[str]).trim();
@@ -32,22 +34,88 @@ ConfluenceSetStructure.prototype = {
         }
         return err_arr.join(' ');
     },
-    createInputOuputHTML: function(test_array) {
+
+
+    createInputsDescriptionTable: function(inputs,caller) {
+        var desc = inputs.description;
+        desc = desc.substring(desc.indexOf("<p><b>Inputs:</b>"));
+        desc = desc.replace("<p><b>Inputs:</b>", "");
+        desc = desc.substring(0, desc.indexOf("</p>"));
+        desc = desc.substring(0, desc.lastIndexOf("</ul>"));
+        var arr = desc.split("<li><b>");
+        var json = {};
+        json.data = [];
+        var slpitarr = [];
+
+        for (var item in arr) {
+            if (arr[item].indexOf("</b>") != -1) {
+                splitarr = arr[item].split("</b>");
+                json.data.push({
+                    key: splitarr[0],
+                    value: splitarr[1].replace("-", "").replace("</li>", "")
+                });
+            }
+        }
+		if(caller == "createtestcase"){
+			 return json;
+		}
+        var inputtable = "";
+        for (item in json.data) {
+            inputtable = inputtable + '<tr class=\"tablesorter-headerRow\"><td class=\"tablesorter-header sortableHeader tablesorter-headerUnSorted\" colspan=\"1\">' + json.data[item].key + '<br /></td><td class=\"tablesorter-header sortableHeader tablesorter-headerUnSorted\" colspan=\"1\">' + json.data[item].value + '<br /></td><td class=\"tablesorter-header sortableHeader tablesorter-headerUnSorted\" colspan=\"1\"><br /></td><td class=\"tablesorter-header sortableHeader tablesorter-headerUnSorted\" colspan=\"1\"><br /></td></tr>';
+        }
+        return inputtable;
+
+    },
+    createInputOuputHTML: function(test_array, type) {
         var test_html_concat = "";
         for (var item in test_array) {
-            test_html_concat = test_html_concat + "<p><strong>" + test_array[item] + " : </strong><br /> </p> ";
+
+            if (test_array[item].key == "Status" && (type == "generictable_tci1" || type == "generictable_tci2" || type == "generictable_tci3")) {
+                test_html_concat = test_html_concat + "<p><strong>" + test_array[item].key + " : </strong> Error <br /> </p> ";
+            } else if (test_array[item].key == "Error Message" && (type == "generictable_tci1" || type == "generictable_tci2" || type == "generictable_tci3")) {
+                if (type == "generictable_tci1") {
+                    test_html_concat = test_html_concat + "<p><strong>" + test_array[item].key + " : </strong> Invalid username, password, or token, or expired token.<br /> </p> ";
+                } else if (type == "generictable_tci2") {
+                    test_html_concat = test_html_concat + "<p><strong>" + test_array[item].key + " : </strong>User doesn't have sufficient permission to perform this action.<br /></p> ";
+                } else if (type == "generictable_tci3") {
+                    test_html_concat = test_html_concat + "<p><strong>" + test_array[item].key + " : </strong>Unexpected error occurred. Check the response received from the API for more details.<br /></p> ";
+                }
+            } else {
+                test_html_concat = test_html_concat + "<p><strong>" + test_array[item].key + " : </strong><br /> </p> ";
+            }
         }
-		return test_html_concat;
+        return test_html_concat;
     },
     createtestcase: function(inputs) {
-        var test_title = "Title";
-        var test_input = ["input1", "input2", "input3"];
-        var test_output = ["output1", "output2", "Status", "Error Message"];
+        var test_title = "Description";
 
-        var casetable = "<table data-layout=\"default\"><colgroup><col style=\"width: 151.0px;\" /><col style=\"width: 211.0px;\" /><col style=\"width: 211.0px;\" /><col style=\"width: 115.0px;\" /><col style=\"width: 71.0px;\" /></colgroup><tbody><tr><th><p>Test Case - Description</p></th><th><p>Inputs</p></th><th><p>Outputs</p></th><th><p>Expected Result?</p></th><th><p>Notes</p></th></tr><tr><td><p>" + test_title + "</p></td><td>" + new ConfluenceSetStructure().createInputOuputHTML(test_input) + "</td><td><p> " + new ConfluenceSetStructure().createInputOuputHTML(test_output) + "</p></td><td><p>Snow instance check:</p><ul><li><p>&nbsp;link fetched.</p></li></ul></td><td><p><br /></p></td></tr></tbody></table>";
+		var inputjson = new ConfluenceSetStructure().createInputsDescriptionTable(inputs, "createtestcase");
+		gs.info(inputjson);
+     //   var test_input =  inputjson.data;
+        var test_input = [{
+            "key": "Input1"
+        }, {
+            "key": "Input2"
+        }, {
+            "key": "Input3"
+        }, {
+            "key": "Input4"
+        }];
+        var test_output = [{
+            "key": "Output1"
+        }, {
+            "key": "Output2"
+        }, {
+            "key": "Status"
+        }, {
+            "key": "Error Message"
+        }];
+        var casetblheader = "<colgroup><col style=\"width: 151.0px;\" /><col style=\"width: 211.0px;\" /><col style=\"width: 211.0px;\" /><col style=\"width: 115.0px;\" /><col style=\"width: 71.0px;\" /></colgroup><tbody><tr><th><p>Test Case - Description</p></th><th><p>Inputs</p></th><th><p>Outputs</p></th><th><p>Expected Result?</p></th><th><p>Notes</p></th></tr>";
+
+        var casetable = "<table data-layout=\"default\">" + casetblheader + "<tr><td><p>" + test_title + "</p></td><td>" + new ConfluenceSetStructure().createInputOuputHTML(test_input, "casetable") + "</td><td>" + new ConfluenceSetStructure().createInputOuputHTML(test_output, "casetable") + "</td><td><p>Snow instance check:</p></td><td><p><br /></p></td></tr></tbody></table>";
 
 
-        var generictable = "<h4>TCI1</h4><table data-layout=\"default\"><colgroup><col style=\"width: 151.0px;\" /><col style=\"width: 218.0px;\" /><col style=\"width: 208.0px;\" /><col style=\"width: 125.0px;\" /><col style=\"width: 57.0px;\" /></colgroup><tbody><tr><th><p>Test Case - Description</p></th><th><p>Inputs</p></th><th><p>Outputs</p></th><th><p>Expected Result?</p></th><th><p>Notes</p></th></tr><tr><td><p>The generated session token is not valid.</p></td><td>" + new ConfluenceSetStructure().createInputOuputHTML(test_input) + "</td><td><p>" + new ConfluenceSetStructure().createInputOuputHTML(test_output) + "</p></td><td><p><span style=\"color: rgb(255,255,255);\">YES</span></p><p>Snow instance check:</p><ul><li><p>&nbsp;link fetched.</p></li></ul></td><td><p><br /></p></td></tr></tbody></table><p>TCI2</p><table data-layout=\"default\"><colgroup><col style=\"width: 151.0px;\" /><col style=\"width: 225.0px;\" /><col style=\"width: 210.0px;\" /><col style=\"width: 112.0px;\" /><col style=\"width: 61.0px;\" /></colgroup><tbody><tr><th><p>Test Case - Description</p></th><th><p>Inputs</p></th><th><p>Outputs</p></th><th><p>Expected Result?</p></th><th><p>Notes</p></th></tr><tr><td><p>Credentials not associated with appropriate permission.</p></td><td>" + new ConfluenceSetStructure().createInputOuputHTML(test_input) + " </td><td>" + new ConfluenceSetStructure().createInputOuputHTML(test_output) + "</td><td><p><span style=\"color: rgb(255,ɕ,255);\">YES</span></p><p>Snow instance check:</p><ul><li><p>&nbsp;</p></li></ul></td><td><p><br /></p></td></tr></tbody></table>";
+        var generictable = "<p>TCI1</p><table data-layout=\"default\">" + casetblheader + "<tr><td><p>The generated session token is not valid.</p></td><td>" + new ConfluenceSetStructure().createInputOuputHTML(test_input, "casetable") + "</td><td>" + new ConfluenceSetStructure().createInputOuputHTML(test_output, "generictable_tci1") + "</td><td><p>Snow instance check:</p></td><td><p><br /></p></td></tr></tbody></table><p>TCI2</p><table data-layout=\"default\">" + casetblheader + "<tr><td><p>Credentials not associated with appropriate permission.</p></td><td>" + new ConfluenceSetStructure().createInputOuputHTML(test_input, "casetable") + " </td><td>" + new ConfluenceSetStructure().createInputOuputHTML(test_output, "generictable_tci2") + "</td><td><p>Snow instance check:</p></td><td><p><br /></p></td></tr></tbody></table><p>TCI1</p><table data-layout=\"default\">" + casetblheader + "<tr><td><p>Unexpected Error.</p></td><td>" + new ConfluenceSetStructure().createInputOuputHTML(test_input, "casetable") + "</td><td>" + new ConfluenceSetStructure().createInputOuputHTML(test_output, "generictable_tci3") + "</td><td><p>Snow instance check:</p></td><td><p><br /></p></td></tr></tbody></table>";
         var concattable = "";
         for (var item = 0; item < inputs.no_of_test_cases; item++) {
             concattable = concattable + "<p>TC" + (parseInt(item) + 1) + "</p>";
@@ -64,13 +132,13 @@ ConfluenceSetStructure.prototype = {
         <sys_created_by>admin</sys_created_by>
         <sys_created_on>2020-06-03 11:51:32</sys_created_on>
         <sys_id>29394fab07c5901025e2f9fc7c1ed077</sys_id>
-        <sys_mod_count>26</sys_mod_count>
+        <sys_mod_count>51</sys_mod_count>
         <sys_name>ConfluenceSetStructure</sys_name>
         <sys_package display_value="Backup" source="x_264406_backup">0ebc18470781101025e2f9fc7c1ed0be</sys_package>
         <sys_policy>read</sys_policy>
         <sys_scope display_value="Backup">0ebc18470781101025e2f9fc7c1ed0be</sys_scope>
         <sys_update_name>sys_script_include_29394fab07c5901025e2f9fc7c1ed077</sys_update_name>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2020-06-05 08:05:48</sys_updated_on>
+        <sys_updated_on>2020-06-10 15:52:50</sys_updated_on>
     </sys_script_include>
 </record_update>

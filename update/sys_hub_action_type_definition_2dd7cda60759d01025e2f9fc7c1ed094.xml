@@ -1,0 +1,389 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update sys_domain="global" table="sys_hub_action_type_definition">
+    <sys_hub_action_type_definition action="INSERT_OR_UPDATE">
+        <access>public</access>
+        <acls/>
+        <action_template/>
+        <active>true</active>
+        <annotation/>
+        <callable_by_client_api>false</callable_by_client_api>
+        <category/>
+        <copied_from/>
+        <copied_from_name/>
+        <description>&lt;p&gt;Retrieves core data for employees from Cornerstone.&lt;/p&gt;
+&lt;p&gt;&lt;b&gt;Inputs:&lt;/b&gt;
+  &lt;ul&gt;
+    &lt;li&gt;&lt;b&gt;ID&lt;/b&gt; - Cornerstone generated unique ID.&lt;/li&gt;
+    &lt;li&gt;&lt;b&gt;User ID&lt;/b&gt; - Unique identifier of the user.&lt;/li&gt;
+    &lt;li&gt;&lt;b&gt;First Name&lt;/b&gt; - First name of the employee. &lt;/li&gt;
+    &lt;li&gt;&lt;b&gt;Last Name&lt;/b&gt; - Last name of the employee. &lt;/li&gt;
+    &lt;li&gt;&lt;b&gt; GUID&lt;/b&gt; - GUID of the employee. &lt;/li&gt;
+    &lt;li&gt;&lt;b&gt;Last Modified Date&lt;/b&gt; - Last modified date in UTC DateTime (YYYY-MM-DD, YYYY-M-D, YYYY/MM/DD, or YYYY/M/D) format. This returns any employee records that were modified since the date provided in this field (inclusive).&lt;/li&gt;
+    &lt;li&gt;&lt;b&gt;Created Date&lt;/b&gt; - Date when the employee record was created in UTC DateTime (YYYY-MM-DD, YYYY-M-D, YYYY/MM/DD, or YYYY/M/D) format.&lt;/li&gt;
+    &lt;li&gt;&lt;b&gt;Page Number&lt;/b&gt; - Page number of the result set. Default value is 1. &lt;/li&gt;
+    &lt;li&gt;&lt;b&gt;Page Size&lt;/b&gt; - Number of records in a result set. Default and maximum value is 50.&lt;/li&gt;
+    &lt;li&gt;&lt;b&gt;Include Inactive&lt;/b&gt; - Specifies if the inactive records is to be included in the response. Valid values are Yes, No, True, or False. By default, only active employees are included in the response.&lt;/li&gt;
+  &lt;/ul&gt;
+&lt;/p&gt;
+&lt;p&gt;&lt;b&gt;Outputs:&lt;/b&gt;
+  &lt;ul&gt;
+    &lt;li&gt;&lt;b&gt;Employees&lt;/b&gt;
+      &lt;ul&gt;
+        &lt;li&gt;ID&lt;/li&gt;
+        &lt;li&gt;User ID&lt;/li&gt;
+        &lt;li&gt;User Name&lt;/li&gt;
+        &lt;li&gt;GUID&lt;/li&gt;
+        &lt;li&gt;First Name&lt;/li&gt;
+        &lt;li&gt;Last Name&lt;/li&gt;
+        &lt;li&gt;Middle Name&lt;/li&gt;
+        &lt;li&gt;Prefix&lt;/li&gt;
+        &lt;li&gt;Suffix&lt;/li&gt;
+        &lt;li&gt;Primary Email&lt;/li&gt;
+        &lt;li&gt;Personal Email&lt;/li&gt;
+        &lt;li&gt;Home Phone&lt;/li&gt;
+        &lt;li&gt;Mobile Phone&lt;/li&gt;
+        &lt;li&gt;Work Phone&lt;/li&gt;
+        &lt;li&gt;Fax&lt;/li&gt;
+        &lt;li&gt;Address
+          &lt;ul&gt;
+            &lt;li&gt;Country&lt;/li&gt;
+            &lt;li&gt;Line1&lt;/li&gt;
+            &lt;li&gt;Line2&lt;/li&gt;
+            &lt;li&gt;City&lt;/li&gt;
+            &lt;li&gt;State&lt;/li&gt;
+            &lt;li&gt;Zip Code&lt;/li&gt;
+          &lt;/ul&gt;
+        &lt;/li&gt;
+        &lt;li&gt;Worker Status
+          &lt;ul&gt;
+            &lt;li&gt;Last Hire Date&lt;/li&gt;
+            &lt;li&gt;Original Hire Date&lt;/li&gt;
+            &lt;li&gt;Active&lt;/li&gt;
+            &lt;li&gt;Absent&lt;/li&gt;
+          &lt;/ul&gt;
+        &lt;/li&gt;
+        &lt;li&gt;Settings
+          &lt;ul&gt;
+            &lt;li&gt;Display Language&lt;/li&gt;
+            &lt;li&gt;Time Zone&lt;/li&gt;
+            &lt;li&gt;Training Approvals&lt;/li&gt;
+          &lt;/ul&gt;
+        &lt;/li&gt;
+        &lt;li&gt;Manager
+          &lt;ul&gt;
+            &lt;li&gt;ID&lt;/li&gt;
+            &lt;li&gt;User ID&lt;/li&gt;
+            &lt;li&gt;First Name&lt;/li&gt;
+            &lt;li&gt;Last Name&lt;/li&gt;
+          &lt;/ul&gt;
+        &lt;/li&gt;
+        &lt;li&gt;Approver
+          &lt;ul&gt;
+            &lt;li&gt;ID&lt;/li&gt;
+            &lt;li&gt;User ID&lt;/li&gt;
+            &lt;li&gt;First Name&lt;/li&gt;
+            &lt;li&gt;Last Name&lt;/li&gt;
+          &lt;/ul&gt;
+        &lt;/li&gt;
+        &lt;li&gt;Relations
+          &lt;ul&gt;
+            &lt;li&gt;Relation Type&lt;/li&gt;
+            &lt;li&gt;ID&lt;/li&gt;
+            &lt;li&gt;User ID&lt;/li&gt;
+            &lt;li&gt;First Name&lt;/li&gt;
+            &lt;li&gt;Last Name&lt;/li&gt;
+          &lt;/ul&gt;
+        &lt;/li&gt;
+        &lt;li&gt;OUs
+          &lt;ul&gt;
+            &lt;li&gt;ID&lt;/li&gt;
+            &lt;li&gt;OU ID&lt;/li&gt;
+            &lt;li&gt;Name&lt;/li&gt;
+            &lt;li&gt;Type&lt;/li&gt;
+          &lt;/ul&gt;
+        &lt;/li&gt;
+        &lt;li&gt;Self-Registration Group
+          &lt;ul&gt;
+            &lt;li&gt;ID&lt;/li&gt;
+            &lt;li&gt;OU ID&lt;/li&gt;
+            &lt;li&gt;Name&lt;/li&gt;
+            &lt;li&gt;Type&lt;/li&gt;
+          &lt;/ul&gt;
+        &lt;/li&gt;
+        &lt;li&gt;Custom OUs
+          &lt;ul&gt;
+            &lt;li&gt;ID&lt;/li&gt;
+            &lt;li&gt;OU ID&lt;/li&gt;
+            &lt;li&gt;Name&lt;/li&gt;
+            &lt;li&gt;Type&lt;/li&gt;
+          &lt;/ul&gt;
+        &lt;/li&gt;
+        &lt;li&gt;Custom Fields
+          &lt;ul&gt;
+            &lt;li&gt;ID&lt;/li&gt;
+            &lt;li&gt;Name&lt;/li&gt;
+            &lt;li&gt;Value&lt;/li&gt;
+          &lt;/ul&gt;
+        &lt;/li&gt;
+        &lt;li&gt;Employee Meta Data
+          &lt;ul&gt;
+            &lt;li&gt;Created Date&lt;/li&gt;
+            &lt;li&gt;Modified Date &lt;/li&gt;
+          &lt;/ul&gt;
+        &lt;/li&gt;
+        &lt;li&gt;Reason For Change&lt;/li&gt;
+      &lt;/ul&gt;
+    &lt;/li&gt;
+    &lt;li&gt;&lt;b&gt;Size&lt;/b&gt; - Payload size.&lt;/li&gt;
+    &lt;li&gt;&lt;b&gt;Start&lt;/b&gt; - Start value for payload.&lt;/li&gt;
+    &lt;li&gt;&lt;b&gt;Total Records&lt;/b&gt; - Total number of records from this API call.&lt;/li&gt;
+    &lt;li&gt;&lt;b&gt;Status&lt;/b&gt; - If the request is executed successfully, Status is set to “Success”. If there is a failure in Cornerstone, Status is set to “Error".&lt;/li&gt;
+    &lt;li&gt;&lt;b&gt;Error Message&lt;/b&gt; - Reason for error. Populated only when an error occurs.&lt;/li&gt;
+  &lt;/ul&gt;
+&lt;/p&gt;
+
+&lt;p&gt;&lt;b&gt;Error Messages:&lt;/b&gt;
+  &lt;ul&gt;
+    &lt;li&gt;Provided ID is invalid.&lt;/li&gt;
+    &lt;li&gt;No employee details are available for the provided input.&lt;/li&gt;
+    &lt;li&gt;Provided Created Date is not in a valid format MM/DD/YYYY, M/D/YYYY / MM-DD-YYYY, or M-D-YYYY, or is invalid.&lt;/li&gt;
+    &lt;li&gt;Provided Last Modified Date is not in a valid format MM/DD/YYYY, M/D/YYYY / MM-DD-YYYY, or M-D-YYYY, or is invalid.&lt;/li&gt;
+    &lt;li&gt;Provided GUID is invalid.&lt;/li&gt;
+    &lt;li&gt;Provided Page Size is invalid or exceeds the max page size value.&lt;/li&gt;
+    &lt;li&gt;Provided Page Number is invalid.&lt;/li&gt;
+    &lt;li&gt;Provided value for Include Inactive field is invalid. &lt;/li&gt;
+    &lt;li&gt;Invalid username, password, or token, or expired token.&lt;/li&gt;
+    &lt;li&gt;User doesn’t have sufficient permission to perform this action.&lt;/li&gt;
+    &lt;li&gt; Unexpected error occurred. Check the response received from the API for more details.&lt;/li&gt;
+  &lt;/ul&gt;
+&lt;/p&gt;
+&lt;p&gt;To use this action, the corresponding Cornerstone connection and credential must be created and associated with the Cornerstone Connection &amp; Credential alias. &lt;a href="http://docs.servicenow.com/?context=CSHelp:credentials-connections-alias"&gt;Learn More&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;b&gt;Note&lt;/b&gt;: Requires a subscription for production use. &lt;a href="https://docs.servicenow.com/?context=CSHelp:IntegrationHub-licensing-information"&gt;Read More&lt;/a&gt;.&lt;/p&gt;</description>
+        <ih_action>false</ih_action>
+        <internal_name>demo_action_2</internal_name>
+        <label_cache>[]</label_cache>
+        <latest_snapshot>cf1889e60759d01025e2f9fc7c1ed024</latest_snapshot>
+        <master_snapshot>0b18c9e60759d01025e2f9fc7c1ed014</master_snapshot>
+        <name>Demo Action 2</name>
+        <outputs/>
+        <state>published</state>
+        <sys_class_name>sys_hub_action_type_definition</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2020-06-12 10:06:45</sys_created_on>
+        <sys_domain>global</sys_domain>
+        <sys_domain_path>/</sys_domain_path>
+        <sys_id>2dd7cda60759d01025e2f9fc7c1ed094</sys_id>
+        <sys_mod_count>5</sys_mod_count>
+        <sys_name>Demo Action 2</sys_name>
+        <sys_overrides/>
+        <sys_package display_value="Global" source="global">global</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Backup">0ebc18470781101025e2f9fc7c1ed0be</sys_scope>
+        <sys_update_name>sys_hub_action_type_definition_2dd7cda60759d01025e2f9fc7c1ed094</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2020-06-12 10:07:58</sys_updated_on>
+        <system_level>false</system_level>
+        <type/>
+    </sys_hub_action_type_definition>
+    <sys_translated_text action="delete_multiple" query="documentkey=2dd7cda60759d01025e2f9fc7c1ed094"/>
+    <sys_variable_value action="delete_multiple" query="document_key=2dd7cda60759d01025e2f9fc7c1ed094"/>
+    <sys_hub_action_plan action="delete_multiple" query="action_id=2dd7cda60759d01025e2f9fc7c1ed094^sys_idNOT INc718c9e60759d01025e2f9fc7c1ed021"/>
+    <sys_hub_action_plan action="INSERT_OR_UPDATE">
+        <action_id display_value="Demo Action 2">2dd7cda60759d01025e2f9fc7c1ed094</action_id>
+        <plan>{"persistor":{"@class":".ChunkingPlanPersistor","table":"sys_hub_action_plan","id":"c718c9e60759d01025e2f9fc7c1ed021","name":"plan"}}</plan>
+        <snapshot>cf1889e60759d01025e2f9fc7c1ed024</snapshot>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2020-06-12 10:07:58</sys_created_on>
+        <sys_domain>global</sys_domain>
+        <sys_domain_path>/</sys_domain_path>
+        <sys_id>c718c9e60759d01025e2f9fc7c1ed021</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_overrides/>
+        <sys_scope/>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2020-06-12 10:07:58</sys_updated_on>
+    </sys_hub_action_plan>
+    <sys_hub_action_type_snapshot action="INSERT_OR_UPDATE">
+        <access>public</access>
+        <acls/>
+        <action_template/>
+        <annotation/>
+        <callable_by_client_api>false</callable_by_client_api>
+        <category/>
+        <copied_from/>
+        <copied_from_name/>
+        <description>&lt;p&gt;Retrieves core data for employees from Cornerstone.&lt;/p&gt;
+&lt;p&gt;&lt;b&gt;Inputs:&lt;/b&gt;
+  &lt;ul&gt;
+    &lt;li&gt;&lt;b&gt;ID&lt;/b&gt; - Cornerstone generated unique ID.&lt;/li&gt;
+    &lt;li&gt;&lt;b&gt;User ID&lt;/b&gt; - Unique identifier of the user.&lt;/li&gt;
+    &lt;li&gt;&lt;b&gt;First Name&lt;/b&gt; - First name of the employee. &lt;/li&gt;
+    &lt;li&gt;&lt;b&gt;Last Name&lt;/b&gt; - Last name of the employee. &lt;/li&gt;
+    &lt;li&gt;&lt;b&gt; GUID&lt;/b&gt; - GUID of the employee. &lt;/li&gt;
+    &lt;li&gt;&lt;b&gt;Last Modified Date&lt;/b&gt; - Last modified date in UTC DateTime (YYYY-MM-DD, YYYY-M-D, YYYY/MM/DD, or YYYY/M/D) format. This returns any employee records that were modified since the date provided in this field (inclusive).&lt;/li&gt;
+    &lt;li&gt;&lt;b&gt;Created Date&lt;/b&gt; - Date when the employee record was created in UTC DateTime (YYYY-MM-DD, YYYY-M-D, YYYY/MM/DD, or YYYY/M/D) format.&lt;/li&gt;
+    &lt;li&gt;&lt;b&gt;Page Number&lt;/b&gt; - Page number of the result set. Default value is 1. &lt;/li&gt;
+    &lt;li&gt;&lt;b&gt;Page Size&lt;/b&gt; - Number of records in a result set. Default and maximum value is 50.&lt;/li&gt;
+    &lt;li&gt;&lt;b&gt;Include Inactive&lt;/b&gt; - Specifies if the inactive records is to be included in the response. Valid values are Yes, No, True, or False. By default, only active employees are included in the response.&lt;/li&gt;
+  &lt;/ul&gt;
+&lt;/p&gt;
+&lt;p&gt;&lt;b&gt;Outputs:&lt;/b&gt;
+  &lt;ul&gt;
+    &lt;li&gt;&lt;b&gt;Employees&lt;/b&gt;
+      &lt;ul&gt;
+        &lt;li&gt;ID&lt;/li&gt;
+        &lt;li&gt;User ID&lt;/li&gt;
+        &lt;li&gt;User Name&lt;/li&gt;
+        &lt;li&gt;GUID&lt;/li&gt;
+        &lt;li&gt;First Name&lt;/li&gt;
+        &lt;li&gt;Last Name&lt;/li&gt;
+        &lt;li&gt;Middle Name&lt;/li&gt;
+        &lt;li&gt;Prefix&lt;/li&gt;
+        &lt;li&gt;Suffix&lt;/li&gt;
+        &lt;li&gt;Primary Email&lt;/li&gt;
+        &lt;li&gt;Personal Email&lt;/li&gt;
+        &lt;li&gt;Home Phone&lt;/li&gt;
+        &lt;li&gt;Mobile Phone&lt;/li&gt;
+        &lt;li&gt;Work Phone&lt;/li&gt;
+        &lt;li&gt;Fax&lt;/li&gt;
+        &lt;li&gt;Address
+          &lt;ul&gt;
+            &lt;li&gt;Country&lt;/li&gt;
+            &lt;li&gt;Line1&lt;/li&gt;
+            &lt;li&gt;Line2&lt;/li&gt;
+            &lt;li&gt;City&lt;/li&gt;
+            &lt;li&gt;State&lt;/li&gt;
+            &lt;li&gt;Zip Code&lt;/li&gt;
+          &lt;/ul&gt;
+        &lt;/li&gt;
+        &lt;li&gt;Worker Status
+          &lt;ul&gt;
+            &lt;li&gt;Last Hire Date&lt;/li&gt;
+            &lt;li&gt;Original Hire Date&lt;/li&gt;
+            &lt;li&gt;Active&lt;/li&gt;
+            &lt;li&gt;Absent&lt;/li&gt;
+          &lt;/ul&gt;
+        &lt;/li&gt;
+        &lt;li&gt;Settings
+          &lt;ul&gt;
+            &lt;li&gt;Display Language&lt;/li&gt;
+            &lt;li&gt;Time Zone&lt;/li&gt;
+            &lt;li&gt;Training Approvals&lt;/li&gt;
+          &lt;/ul&gt;
+        &lt;/li&gt;
+        &lt;li&gt;Manager
+          &lt;ul&gt;
+            &lt;li&gt;ID&lt;/li&gt;
+            &lt;li&gt;User ID&lt;/li&gt;
+            &lt;li&gt;First Name&lt;/li&gt;
+            &lt;li&gt;Last Name&lt;/li&gt;
+          &lt;/ul&gt;
+        &lt;/li&gt;
+        &lt;li&gt;Approver
+          &lt;ul&gt;
+            &lt;li&gt;ID&lt;/li&gt;
+            &lt;li&gt;User ID&lt;/li&gt;
+            &lt;li&gt;First Name&lt;/li&gt;
+            &lt;li&gt;Last Name&lt;/li&gt;
+          &lt;/ul&gt;
+        &lt;/li&gt;
+        &lt;li&gt;Relations
+          &lt;ul&gt;
+            &lt;li&gt;Relation Type&lt;/li&gt;
+            &lt;li&gt;ID&lt;/li&gt;
+            &lt;li&gt;User ID&lt;/li&gt;
+            &lt;li&gt;First Name&lt;/li&gt;
+            &lt;li&gt;Last Name&lt;/li&gt;
+          &lt;/ul&gt;
+        &lt;/li&gt;
+        &lt;li&gt;OUs
+          &lt;ul&gt;
+            &lt;li&gt;ID&lt;/li&gt;
+            &lt;li&gt;OU ID&lt;/li&gt;
+            &lt;li&gt;Name&lt;/li&gt;
+            &lt;li&gt;Type&lt;/li&gt;
+          &lt;/ul&gt;
+        &lt;/li&gt;
+        &lt;li&gt;Self-Registration Group
+          &lt;ul&gt;
+            &lt;li&gt;ID&lt;/li&gt;
+            &lt;li&gt;OU ID&lt;/li&gt;
+            &lt;li&gt;Name&lt;/li&gt;
+            &lt;li&gt;Type&lt;/li&gt;
+          &lt;/ul&gt;
+        &lt;/li&gt;
+        &lt;li&gt;Custom OUs
+          &lt;ul&gt;
+            &lt;li&gt;ID&lt;/li&gt;
+            &lt;li&gt;OU ID&lt;/li&gt;
+            &lt;li&gt;Name&lt;/li&gt;
+            &lt;li&gt;Type&lt;/li&gt;
+          &lt;/ul&gt;
+        &lt;/li&gt;
+        &lt;li&gt;Custom Fields
+          &lt;ul&gt;
+            &lt;li&gt;ID&lt;/li&gt;
+            &lt;li&gt;Name&lt;/li&gt;
+            &lt;li&gt;Value&lt;/li&gt;
+          &lt;/ul&gt;
+        &lt;/li&gt;
+        &lt;li&gt;Employee Meta Data
+          &lt;ul&gt;
+            &lt;li&gt;Created Date&lt;/li&gt;
+            &lt;li&gt;Modified Date &lt;/li&gt;
+          &lt;/ul&gt;
+        &lt;/li&gt;
+        &lt;li&gt;Reason For Change&lt;/li&gt;
+      &lt;/ul&gt;
+    &lt;/li&gt;
+    &lt;li&gt;&lt;b&gt;Size&lt;/b&gt; - Payload size.&lt;/li&gt;
+    &lt;li&gt;&lt;b&gt;Start&lt;/b&gt; - Start value for payload.&lt;/li&gt;
+    &lt;li&gt;&lt;b&gt;Total Records&lt;/b&gt; - Total number of records from this API call.&lt;/li&gt;
+    &lt;li&gt;&lt;b&gt;Status&lt;/b&gt; - If the request is executed successfully, Status is set to “Success”. If there is a failure in Cornerstone, Status is set to “Error".&lt;/li&gt;
+    &lt;li&gt;&lt;b&gt;Error Message&lt;/b&gt; - Reason for error. Populated only when an error occurs.&lt;/li&gt;
+  &lt;/ul&gt;
+&lt;/p&gt;
+
+&lt;p&gt;&lt;b&gt;Error Messages:&lt;/b&gt;
+  &lt;ul&gt;
+    &lt;li&gt;Provided ID is invalid.&lt;/li&gt;
+    &lt;li&gt;No employee details are available for the provided input.&lt;/li&gt;
+    &lt;li&gt;Provided Created Date is not in a valid format MM/DD/YYYY, M/D/YYYY / MM-DD-YYYY, or M-D-YYYY, or is invalid.&lt;/li&gt;
+    &lt;li&gt;Provided Last Modified Date is not in a valid format MM/DD/YYYY, M/D/YYYY / MM-DD-YYYY, or M-D-YYYY, or is invalid.&lt;/li&gt;
+    &lt;li&gt;Provided GUID is invalid.&lt;/li&gt;
+    &lt;li&gt;Provided Page Size is invalid or exceeds the max page size value.&lt;/li&gt;
+    &lt;li&gt;Provided Page Number is invalid.&lt;/li&gt;
+    &lt;li&gt;Provided value for Include Inactive field is invalid. &lt;/li&gt;
+    &lt;li&gt;Invalid username, password, or token, or expired token.&lt;/li&gt;
+    &lt;li&gt;User doesn’t have sufficient permission to perform this action.&lt;/li&gt;
+    &lt;li&gt; Unexpected error occurred. Check the response received from the API for more details.&lt;/li&gt;
+  &lt;/ul&gt;
+&lt;/p&gt;
+&lt;p&gt;To use this action, the corresponding Cornerstone connection and credential must be created and associated with the Cornerstone Connection &amp; Credential alias. &lt;a href="http://docs.servicenow.com/?context=CSHelp:credentials-connections-alias"&gt;Learn More&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;b&gt;Note&lt;/b&gt;: Requires a subscription for production use. &lt;a href="https://docs.servicenow.com/?context=CSHelp:IntegrationHub-licensing-information"&gt;Read More&lt;/a&gt;.&lt;/p&gt;</description>
+        <internal_name>demo_action_2</internal_name>
+        <label_cache>[]</label_cache>
+        <master>true</master>
+        <name>Demo Action 2</name>
+        <outputs/>
+        <parent_action display_value="Demo Action 2">2dd7cda60759d01025e2f9fc7c1ed094</parent_action>
+        <sys_class_name>sys_hub_action_type_snapshot</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2020-06-12 10:07:58</sys_created_on>
+        <sys_domain>global</sys_domain>
+        <sys_domain_path>/</sys_domain_path>
+        <sys_id>0b18c9e60759d01025e2f9fc7c1ed014</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name/>
+        <sys_overrides/>
+        <sys_package/>
+        <sys_policy/>
+        <sys_scope display_value="Backup">0ebc18470781101025e2f9fc7c1ed0be</sys_scope>
+        <sys_update_name/>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2020-06-12 10:07:58</sys_updated_on>
+        <system_level>false</system_level>
+        <type/>
+    </sys_hub_action_type_snapshot>
+    <sys_translated_text action="delete_multiple" query="documentkey=0b18c9e60759d01025e2f9fc7c1ed014"/>
+    <sys_variable_value action="delete_multiple" query="document_key=0b18c9e60759d01025e2f9fc7c1ed014"/>
+</record_update>
