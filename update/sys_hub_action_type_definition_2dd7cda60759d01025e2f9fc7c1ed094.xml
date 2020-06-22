@@ -26,112 +26,15 @@
 &lt;/p&gt;
 &lt;p&gt;&lt;b&gt;Outputs:&lt;/b&gt;
   &lt;ul&gt;
-    &lt;li&gt;&lt;b&gt;Employees&lt;/b&gt;
+    &lt;li&gt;&lt;b&gt;Employees&lt;/b&gt; -  List of employee details.
       &lt;ul&gt;
         &lt;li&gt;ID&lt;/li&gt;
         &lt;li&gt;User ID&lt;/li&gt;
         &lt;li&gt;User Name&lt;/li&gt;
-        &lt;li&gt;GUID&lt;/li&gt;
-        &lt;li&gt;First Name&lt;/li&gt;
-        &lt;li&gt;Last Name&lt;/li&gt;
-        &lt;li&gt;Middle Name&lt;/li&gt;
-        &lt;li&gt;Prefix&lt;/li&gt;
-        &lt;li&gt;Suffix&lt;/li&gt;
-        &lt;li&gt;Primary Email&lt;/li&gt;
-        &lt;li&gt;Personal Email&lt;/li&gt;
-        &lt;li&gt;Home Phone&lt;/li&gt;
-        &lt;li&gt;Mobile Phone&lt;/li&gt;
-        &lt;li&gt;Work Phone&lt;/li&gt;
-        &lt;li&gt;Fax&lt;/li&gt;
-        &lt;li&gt;Address
-          &lt;ul&gt;
-            &lt;li&gt;Country&lt;/li&gt;
-            &lt;li&gt;Line1&lt;/li&gt;
-            &lt;li&gt;Line2&lt;/li&gt;
-            &lt;li&gt;City&lt;/li&gt;
-            &lt;li&gt;State&lt;/li&gt;
-            &lt;li&gt;Zip Code&lt;/li&gt;
-          &lt;/ul&gt;
-        &lt;/li&gt;
-        &lt;li&gt;Worker Status
-          &lt;ul&gt;
-            &lt;li&gt;Last Hire Date&lt;/li&gt;
-            &lt;li&gt;Original Hire Date&lt;/li&gt;
-            &lt;li&gt;Active&lt;/li&gt;
-            &lt;li&gt;Absent&lt;/li&gt;
-          &lt;/ul&gt;
-        &lt;/li&gt;
-        &lt;li&gt;Settings
-          &lt;ul&gt;
-            &lt;li&gt;Display Language&lt;/li&gt;
-            &lt;li&gt;Time Zone&lt;/li&gt;
-            &lt;li&gt;Training Approvals&lt;/li&gt;
-          &lt;/ul&gt;
-        &lt;/li&gt;
-        &lt;li&gt;Manager
-          &lt;ul&gt;
-            &lt;li&gt;ID&lt;/li&gt;
-            &lt;li&gt;User ID&lt;/li&gt;
-            &lt;li&gt;First Name&lt;/li&gt;
-            &lt;li&gt;Last Name&lt;/li&gt;
-          &lt;/ul&gt;
-        &lt;/li&gt;
-        &lt;li&gt;Approver
-          &lt;ul&gt;
-            &lt;li&gt;ID&lt;/li&gt;
-            &lt;li&gt;User ID&lt;/li&gt;
-            &lt;li&gt;First Name&lt;/li&gt;
-            &lt;li&gt;Last Name&lt;/li&gt;
-          &lt;/ul&gt;
-        &lt;/li&gt;
-        &lt;li&gt;Relations
-          &lt;ul&gt;
-            &lt;li&gt;Relation Type&lt;/li&gt;
-            &lt;li&gt;ID&lt;/li&gt;
-            &lt;li&gt;User ID&lt;/li&gt;
-            &lt;li&gt;First Name&lt;/li&gt;
-            &lt;li&gt;Last Name&lt;/li&gt;
-          &lt;/ul&gt;
-        &lt;/li&gt;
-        &lt;li&gt;OUs
-          &lt;ul&gt;
-            &lt;li&gt;ID&lt;/li&gt;
-            &lt;li&gt;OU ID&lt;/li&gt;
-            &lt;li&gt;Name&lt;/li&gt;
-            &lt;li&gt;Type&lt;/li&gt;
-          &lt;/ul&gt;
-        &lt;/li&gt;
-        &lt;li&gt;Self-Registration Group
-          &lt;ul&gt;
-            &lt;li&gt;ID&lt;/li&gt;
-            &lt;li&gt;OU ID&lt;/li&gt;
-            &lt;li&gt;Name&lt;/li&gt;
-            &lt;li&gt;Type&lt;/li&gt;
-          &lt;/ul&gt;
-        &lt;/li&gt;
-        &lt;li&gt;Custom OUs
-          &lt;ul&gt;
-            &lt;li&gt;ID&lt;/li&gt;
-            &lt;li&gt;OU ID&lt;/li&gt;
-            &lt;li&gt;Name&lt;/li&gt;
-            &lt;li&gt;Type&lt;/li&gt;
-          &lt;/ul&gt;
-        &lt;/li&gt;
-        &lt;li&gt;Custom Fields
-          &lt;ul&gt;
-            &lt;li&gt;ID&lt;/li&gt;
-            &lt;li&gt;Name&lt;/li&gt;
-            &lt;li&gt;Value&lt;/li&gt;
-          &lt;/ul&gt;
-        &lt;/li&gt;
-        &lt;li&gt;Employee Meta Data
-          &lt;ul&gt;
-            &lt;li&gt;Created Date&lt;/li&gt;
-            &lt;li&gt;Modified Date &lt;/li&gt;
-          &lt;/ul&gt;
-        &lt;/li&gt;
-        &lt;li&gt;Reason For Change&lt;/li&gt;
-      &lt;/ul&gt;
+     &lt;li&gt;Fax&lt;/li&gt;
+   &lt;/ul&gt;
+&lt;li&gt;Reason For Change&lt;/li&gt;
+
     &lt;/li&gt;
     &lt;li&gt;&lt;b&gt;Size&lt;/b&gt; - Payload size.&lt;/li&gt;
     &lt;li&gt;&lt;b&gt;Start&lt;/b&gt; - Start value for payload.&lt;/li&gt;
@@ -165,14 +68,14 @@
         <master_snapshot>0b18c9e60759d01025e2f9fc7c1ed014</master_snapshot>
         <name>Demo Action 2</name>
         <outputs/>
-        <state>published</state>
+        <state>draft</state>
         <sys_class_name>sys_hub_action_type_definition</sys_class_name>
         <sys_created_by>admin</sys_created_by>
         <sys_created_on>2020-06-12 10:06:45</sys_created_on>
         <sys_domain>global</sys_domain>
         <sys_domain_path>/</sys_domain_path>
         <sys_id>2dd7cda60759d01025e2f9fc7c1ed094</sys_id>
-        <sys_mod_count>5</sys_mod_count>
+        <sys_mod_count>15</sys_mod_count>
         <sys_name>Demo Action 2</sys_name>
         <sys_overrides/>
         <sys_package display_value="Global" source="global">global</sys_package>
@@ -180,7 +83,7 @@
         <sys_scope display_value="Backup">0ebc18470781101025e2f9fc7c1ed0be</sys_scope>
         <sys_update_name>sys_hub_action_type_definition_2dd7cda60759d01025e2f9fc7c1ed094</sys_update_name>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2020-06-12 10:07:58</sys_updated_on>
+        <sys_updated_on>2020-06-22 07:58:55</sys_updated_on>
         <system_level>false</system_level>
         <type/>
     </sys_hub_action_type_definition>

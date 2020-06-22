@@ -16,8 +16,9 @@ ConfluenceSetStructure.prototype = {
 
     setDescription: function(inputs) {
         var test = inputs.description;
-        var descr = test.substring(test.indexOf("<p>") + 4, test.indexOf("</p>"));
-        return descr;
+test = test.substring(test.indexOf("<p>") +3, test.indexOf("</p>"));
+		
+        return test;
     },
 
     setErrorMessage: function(inputs) {
@@ -36,10 +37,11 @@ ConfluenceSetStructure.prototype = {
     },
 
 
-    createInputsDescriptionTable: function(inputs,caller) {
+    createInputsDescriptionTable: function(inputs,caller, IorO) {
+		var find = (IorO == "I") ? "<p><b>Inputs:</b>" :  "<p><b>Outputs:</b>" ;
         var desc = inputs.description;
-        desc = desc.substring(desc.indexOf("<p><b>Inputs:</b>"));
-        desc = desc.replace("<p><b>Inputs:</b>", "");
+        desc = desc.substring(desc.indexOf(find));
+        desc = desc.replace(find, "");
         desc = desc.substring(0, desc.indexOf("</p>"));
         desc = desc.substring(0, desc.lastIndexOf("</ul>"));
         var arr = desc.split("<li><b>");
@@ -52,17 +54,25 @@ ConfluenceSetStructure.prototype = {
                 splitarr = arr[item].split("</b>");
                 json.data.push({
                     key: splitarr[0],
-                    value: splitarr[1].replace("-", "").replace("</li>", "")
+                    value: splitarr[1].substring(0, splitarr[1].lastIndexOf("</li>")).replace("-", "")
                 });
             }
         }
+		gs.info(arr);
 		if(caller == "createtestcase"){
 			 return json;
 		}
         var inputtable = "";
+		if(IorO == "I"){
         for (item in json.data) {
             inputtable = inputtable + '<tr class=\"tablesorter-headerRow\"><td class=\"tablesorter-header sortableHeader tablesorter-headerUnSorted\" colspan=\"1\">' + json.data[item].key + '<br /></td><td class=\"tablesorter-header sortableHeader tablesorter-headerUnSorted\" colspan=\"1\">' + json.data[item].value + '<br /></td><td class=\"tablesorter-header sortableHeader tablesorter-headerUnSorted\" colspan=\"1\"><br /></td><td class=\"tablesorter-header sortableHeader tablesorter-headerUnSorted\" colspan=\"1\"><br /></td></tr>';
         }
+		} else {
+			for (item in json.data) {
+            inputtable = inputtable + '<tr class=\"tablesorter-headerRow\"><td class=\"tablesorter-header sortableHeader tablesorter-headerUnSorted\" colspan=\"1\">' + json.data[item].key + '<br /></td><td class=\"tablesorter-header sortableHeader tablesorter-headerUnSorted\" colspan=\"1\">' + json.data[item].value + '<br /></td></tr>';
+        }
+		}
+		
         return inputtable;
 
     },
@@ -132,13 +142,13 @@ ConfluenceSetStructure.prototype = {
         <sys_created_by>admin</sys_created_by>
         <sys_created_on>2020-06-03 11:51:32</sys_created_on>
         <sys_id>29394fab07c5901025e2f9fc7c1ed077</sys_id>
-        <sys_mod_count>51</sys_mod_count>
+        <sys_mod_count>61</sys_mod_count>
         <sys_name>ConfluenceSetStructure</sys_name>
         <sys_package display_value="Backup" source="x_264406_backup">0ebc18470781101025e2f9fc7c1ed0be</sys_package>
         <sys_policy>read</sys_policy>
         <sys_scope display_value="Backup">0ebc18470781101025e2f9fc7c1ed0be</sys_scope>
         <sys_update_name>sys_script_include_29394fab07c5901025e2f9fc7c1ed077</sys_update_name>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2020-06-10 15:52:50</sys_updated_on>
+        <sys_updated_on>2020-06-22 07:58:35</sys_updated_on>
     </sys_script_include>
 </record_update>

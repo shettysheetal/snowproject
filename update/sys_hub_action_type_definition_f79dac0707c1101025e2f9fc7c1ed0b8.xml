@@ -27,7 +27,7 @@
     &lt;li&gt;&lt;b&gt;Mobile Phone&lt;/b&gt; - Mobile phone of the employee. &lt;/li&gt;
     &lt;li&gt;&lt;b&gt;Work Phone&lt;/b&gt; - Work phone of the employee.&lt;/li&gt;
     &lt;li&gt;&lt;b&gt;Fax&lt;/b&gt; - Fax of the employee.&lt;/li&gt;
-    &lt;li&gt;&lt;b&gt;Address&lt;/b&gt; - Address details.&lt;/li&gt;
+    &lt;li&gt;&lt;b&gt;Address&lt;/b&gt; - Address details.
     &lt;ul&gt;
       &lt;li&gt;Country (For e.g. IND, CAN)&lt;/li&gt;
       &lt;li&gt;Line1&lt;/li&gt;
@@ -36,34 +36,39 @@
       &lt;li&gt;State&lt;/li&gt;
       &lt;li&gt;Zip Code&lt;/li&gt;
     &lt;/ul&gt;
-    &lt;li&gt;&lt;b&gt;Worker Status&lt;/b&gt; - Worker status details.&lt;/li&gt;
+&lt;/li&gt;
+    &lt;li&gt;&lt;b&gt;Worker Status&lt;/b&gt; - Worker status details.
     &lt;ul&gt;
       &lt;li&gt;Last Hire Date&lt;/li&gt;
       &lt;li&gt;Original Hire Date&lt;/li&gt;
       &lt;li&gt;Active&lt;/li&gt;
       &lt;li&gt;Absent&lt;/li&gt;
     &lt;/ul&gt;
-    &lt;li&gt;&lt;b&gt;Settings&lt;/b&gt; - User setting details.&lt;/li&gt;
+&lt;/li&gt;
+    &lt;li&gt;&lt;b&gt;Settings&lt;/b&gt; - User setting details.
     &lt;ul&gt;
         &lt;li&gt;Display Language (For e.g. English (US))&lt;/li&gt;
         &lt;li&gt;Time Zone (For e.g. (UTC+05:00) Islamabad, Karachi)&lt;/li&gt;
       &lt;li&gt;Training Approvals&lt;/li&gt;
     &lt;/ul&gt;
-    &lt;li&gt;&lt;b&gt;Manager&lt;/b&gt; - User manager details.&lt;/li&gt;
+&lt;/li&gt;
+    &lt;li&gt;&lt;b&gt;Manager&lt;/b&gt; - User manager details.
     &lt;ul&gt;
       &lt;li&gt;ID&lt;/li&gt;
       &lt;li&gt;User ID&lt;/li&gt;
       &lt;li&gt;First Name&lt;/li&gt;
       &lt;li&gt;Last Name&lt;/li&gt;
     &lt;/ul&gt;
-    &lt;li&gt;&lt;b&gt;Approver&lt;/b&gt; - User approver details.&lt;/li&gt;
+&lt;/li&gt;
+    &lt;li&gt;&lt;b&gt;Approver&lt;/b&gt; - User approver details.
     &lt;ul&gt;
       &lt;li&gt;ID&lt;/li&gt;
       &lt;li&gt;User ID&lt;/li&gt;
       &lt;li&gt;First Name&lt;/li&gt;
       &lt;li&gt;Last Name&lt;/li&gt;
     &lt;/ul&gt;
-    &lt;li&gt;&lt;b&gt;Relations&lt;/b&gt; - User custom relations.&lt;/li&gt;
+&lt;/li&gt;
+    &lt;li&gt;&lt;b&gt;Relations&lt;/b&gt; - User custom relations.
     &lt;ul&gt;
       &lt;li&gt;Relation Type&lt;/li&gt;
       &lt;li&gt;ID&lt;/li&gt;
@@ -71,34 +76,40 @@
       &lt;li&gt;First Name&lt;/li&gt;
       &lt;li&gt;Last Name&lt;/li&gt;
     &lt;/ul&gt;
-    &lt;li&gt;&lt;b&gt;OUs&lt;/b&gt; - User organisation unit details.&lt;/li&gt;
+&lt;/li&gt;
+    &lt;li&gt;&lt;b&gt;OUs&lt;/b&gt; - User organisation unit details.
     &lt;ul&gt;
       &lt;li&gt;ID&lt;/li&gt;
       &lt;li&gt;OU ID&lt;/li&gt;
       &lt;li&gt;Name&lt;/li&gt;
       &lt;li&gt;Type&lt;/li&gt;
     &lt;/ul&gt;
-    &lt;li&gt;&lt;b&gt;Self-Registration Group&lt;/b&gt; - Self registration details.&lt;/li&gt;
+&lt;/li&gt;
+    &lt;li&gt;&lt;b&gt;Self-Registration Group&lt;/b&gt; - Self registration details.
     &lt;ul&gt;
       &lt;li&gt;ID&lt;/li&gt;
       &lt;li&gt;OU ID&lt;/li&gt;
       &lt;li&gt;Name&lt;/li&gt;
       &lt;li&gt;Type&lt;/li&gt;
     &lt;/ul&gt;
-    &lt;li&gt;&lt;b&gt;Custom OUs&lt;/b&gt; - Custom organisation unit details. This is required if "Required on User Record" is checked under "Manage Organizational Unit Types".&lt;/li&gt;
+&lt;/li&gt;
+    &lt;li&gt;&lt;b&gt;Custom OUs&lt;/b&gt; - Custom organisation unit details. This is required if "Required on User Record" is checked under "Manage Organizational Unit Types".
     &lt;ul&gt;
       &lt;li&gt;ID&lt;/li&gt;
       &lt;li&gt;OU ID&lt;/li&gt;
       &lt;li&gt;Name&lt;/li&gt;
       &lt;li&gt;Type&lt;/li&gt;
     &lt;/ul&gt;
+&lt;/li&gt;
     &lt;li&gt;&lt;b&gt;Custom Fields&lt;/b&gt; - User custom field details in JSON format.&lt;/li&gt;
-    &lt;li&gt;&lt;b&gt;Employee Meta Data&lt;/b&gt; - User metadata information.&lt;/li&gt;
+    &lt;li&gt;&lt;b&gt;Employee Meta Data&lt;/b&gt; - User metadata information.
     &lt;ul&gt;
       &lt;li&gt;Created Date&lt;/li&gt;
       &lt;li&gt;Modified Date &lt;/li&gt;
     &lt;/ul&gt;
+&lt;/li&gt;
     &lt;li&gt;&lt;b&gt;Reason For Change&lt;/b&gt; - Reason for change.&lt;/li&gt;
+
   &lt;/ul&gt;
 &lt;/p&gt;
 &lt;p&gt;&lt;b&gt;Outputs:&lt;/b&gt;
@@ -154,7 +165,7 @@
 &lt;/p&gt;
 &lt;p&gt;To use this action, the corresponding Cornerstone connection and credential must be created and associated with the Cornerstone Connection &amp; Credential alias. &lt;a href="http://docs.servicenow.com/?context=CSHelp:credentials-connections-alias"&gt;Learn More&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;&lt;b&gt;Note&lt;/b&gt;: Requires a subscription for production use. &lt;a href="https://docs.servicenow.com/?context=CSHelp:IntegrationHub-licensing-information"&gt;Read More&lt;/a&gt;.&lt;/p</description>
-        <ih_action>true</ih_action>
+        <ih_action>false</ih_action>
         <internal_name>copy_of_create_page</internal_name>
         <label_cache>[{"name":"{{action.title}}","label":"action➛Title","type":"action","ref":""},{"name":"{{action.application}}","label":"action➛Application","type":"action","ref":""},{"name":"{{action.description}}","label":"action➛Description","type":"action","ref":""},{"name":"{{action.parent_id}}","label":"action➛Parent ID","type":"action","ref":""},{"name":"{{action.number_of_test_cases}}","label":"action➛Number Of Test Cases","type":"action","ref":""},{"name":"{{action.create_test_execution_report}}","label":"action➛Create Test Execution Report","type":"action","ref":""},{"name":"{{step[fc592e3c-695e-4314-acfc-1182dfc94c3d].response_body}}","label":"step➛REST step➛Response Body","type":"step","ref":""},{"name":"{{step[d9a410c0-6656-4af0-ae72-b81293868986].json}}","label":"step➛PreProcessing➛json","type":"step","ref":""},{"name":"{{step[fc592e3c-695e-4314-acfc-1182dfc94c3d].status_code}}","label":"step➛REST step➛Status Code","type":"step","ref":""},{"name":"{{step[fc592e3c-695e-4314-acfc-1182dfc94c3d].error_message}}","label":"step➛REST step➛Error Message","type":"step","ref":""},{"name":"{{step[2da2d691-911a-40b3-8e7c-6ce06c6b4deb].page_id}}","label":"step➛Script step➛page_id","type":"step","ref":""},{"name":"{{step[2da2d691-911a-40b3-8e7c-6ce06c6b4deb].content}}","label":"step➛Script step➛content","type":"step","ref":""},{"name":"{{step[2da2d691-911a-40b3-8e7c-6ce06c6b4deb].contents}}","label":"step➛Script step➛contents","type":"step","ref":""}]</label_cache>
         <latest_snapshot>7022a0a607d5d01025e2f9fc7c1ed063</latest_snapshot>
@@ -162,14 +173,14 @@
         <name>Create Page</name>
         <outputs/>
         <outputs/>
-        <state>published</state>
+        <state>draft</state>
         <sys_class_name>sys_hub_action_type_definition</sys_class_name>
         <sys_created_by>admin</sys_created_by>
         <sys_created_on>2020-06-01 11:13:29</sys_created_on>
         <sys_domain>global</sys_domain>
         <sys_domain_path>/</sys_domain_path>
         <sys_id>f79dac0707c1101025e2f9fc7c1ed0b8</sys_id>
-        <sys_mod_count>90</sys_mod_count>
+        <sys_mod_count>94</sys_mod_count>
         <sys_name>Create Page</sys_name>
         <sys_overrides/>
         <sys_package display_value="Backup" source="x_264406_backup">0ebc18470781101025e2f9fc7c1ed0be</sys_package>
@@ -177,7 +188,7 @@
         <sys_scope display_value="Backup">0ebc18470781101025e2f9fc7c1ed0be</sys_scope>
         <sys_update_name>sys_hub_action_type_definition_f79dac0707c1101025e2f9fc7c1ed0b8</sys_update_name>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2020-06-12 07:22:07</sys_updated_on>
+        <sys_updated_on>2020-06-22 08:09:03</sys_updated_on>
         <system_level>false</system_level>
         <type/>
     </sys_hub_action_type_definition>
