@@ -16,8 +16,8 @@ ConfluenceSetStructure.prototype = {
 
     setDescription: function(inputs) {
         var test = inputs.description;
-test = test.substring(test.indexOf("<p>") +3, test.indexOf("</p>"));
-		
+        test = test.substring(test.indexOf("<p>") + 3, test.indexOf("</p>"));
+
         return test;
     },
 
@@ -37,8 +37,8 @@ test = test.substring(test.indexOf("<p>") +3, test.indexOf("</p>"));
     },
 
 
-    createInputsDescriptionTable: function(inputs,caller, IorO) {
-		var find = (IorO == "I") ? "<p><b>Inputs:</b>" :  "<p><b>Outputs:</b>" ;
+    createInputsDescriptionTable: function(inputs, caller, IorO) {
+        var find = (IorO == "I") ? "<p><b>Inputs:</b>" : "<p><b>Outputs:</b>";
         var desc = inputs.description;
         desc = desc.substring(desc.indexOf(find));
         desc = desc.replace(find, "");
@@ -58,21 +58,22 @@ test = test.substring(test.indexOf("<p>") +3, test.indexOf("</p>"));
                 });
             }
         }
-		gs.info(arr);
-		if(caller == "createtestcase"){
-			 return json;
-		}
+
+
+        if (caller == "createtestcase") {
+            return json;
+        }
         var inputtable = "";
-		if(IorO == "I"){
-        for (item in json.data) {
-            inputtable = inputtable + '<tr class=\"tablesorter-headerRow\"><td class=\"tablesorter-header sortableHeader tablesorter-headerUnSorted\" colspan=\"1\">' + json.data[item].key + '<br /></td><td class=\"tablesorter-header sortableHeader tablesorter-headerUnSorted\" colspan=\"1\">' + json.data[item].value + '<br /></td><td class=\"tablesorter-header sortableHeader tablesorter-headerUnSorted\" colspan=\"1\"><br /></td><td class=\"tablesorter-header sortableHeader tablesorter-headerUnSorted\" colspan=\"1\"><br /></td></tr>';
+        if (IorO == "I") {
+            for (item in json.data) {
+                inputtable = inputtable + '<tr class=\"tablesorter-headerRow\"><td class=\"tablesorter-header sortableHeader tablesorter-headerUnSorted\" colspan=\"1\">' + json.data[item].key + '<br /></td><td class=\"tablesorter-header sortableHeader tablesorter-headerUnSorted\" colspan=\"1\">' + json.data[item].value + '<br /></td><td class=\"tablesorter-header sortableHeader tablesorter-headerUnSorted\" colspan=\"1\"><br /></td><td class=\"tablesorter-header sortableHeader tablesorter-headerUnSorted\" colspan=\"1\"><br /></td></tr>';
+            }
+        } else {
+            for (item in json.data) {
+                inputtable = inputtable + '<tr class=\"tablesorter-headerRow\"><td class=\"tablesorter-header sortableHeader tablesorter-headerUnSorted\" colspan=\"1\">' + json.data[item].key + '<br /></td><td class=\"tablesorter-header sortableHeader tablesorter-headerUnSorted\" colspan=\"1\">' + json.data[item].value + '<br /></td></tr>';
+            }
         }
-		} else {
-			for (item in json.data) {
-            inputtable = inputtable + '<tr class=\"tablesorter-headerRow\"><td class=\"tablesorter-header sortableHeader tablesorter-headerUnSorted\" colspan=\"1\">' + json.data[item].key + '<br /></td><td class=\"tablesorter-header sortableHeader tablesorter-headerUnSorted\" colspan=\"1\">' + json.data[item].value + '<br /></td></tr>';
-        }
-		}
-		
+
         return inputtable;
 
     },
@@ -98,11 +99,12 @@ test = test.substring(test.indexOf("<p>") +3, test.indexOf("</p>"));
     },
     createtestcase: function(inputs) {
         var test_title = "Description";
-
-		var inputjson = new ConfluenceSetStructure().createInputsDescriptionTable(inputs, "createtestcase");
-		gs.info(inputjson);
-     //   var test_input =  inputjson.data;
-        var test_input = [{
+       
+        var inputjson = new ConfluenceSetStructure().createInputsDescriptionTable(inputs, "createtestcase", "I");
+       var outputjson = new ConfluenceSetStructure().createInputsDescriptionTable(inputs, "createtestcase", "O");
+        var test_input =  inputjson.data;
+		 var test_output =  outputjson.data;
+       /* var test_input = [{
             "key": "Input1"
         }, {
             "key": "Input2"
@@ -119,7 +121,7 @@ test = test.substring(test.indexOf("<p>") +3, test.indexOf("</p>"));
             "key": "Status"
         }, {
             "key": "Error Message"
-        }];
+        }];*/
         var casetblheader = "<colgroup><col style=\"width: 151.0px;\" /><col style=\"width: 211.0px;\" /><col style=\"width: 211.0px;\" /><col style=\"width: 115.0px;\" /><col style=\"width: 71.0px;\" /></colgroup><tbody><tr><th><p>Test Case - Description</p></th><th><p>Inputs</p></th><th><p>Outputs</p></th><th><p>Expected Result?</p></th><th><p>Notes</p></th></tr>";
 
         var casetable = "<table data-layout=\"default\">" + casetblheader + "<tr><td><p>" + test_title + "</p></td><td>" + new ConfluenceSetStructure().createInputOuputHTML(test_input, "casetable") + "</td><td>" + new ConfluenceSetStructure().createInputOuputHTML(test_output, "casetable") + "</td><td><p>Snow instance check:</p></td><td><p><br /></p></td></tr></tbody></table>";
@@ -142,13 +144,13 @@ test = test.substring(test.indexOf("<p>") +3, test.indexOf("</p>"));
         <sys_created_by>admin</sys_created_by>
         <sys_created_on>2020-06-03 11:51:32</sys_created_on>
         <sys_id>29394fab07c5901025e2f9fc7c1ed077</sys_id>
-        <sys_mod_count>61</sys_mod_count>
+        <sys_mod_count>67</sys_mod_count>
         <sys_name>ConfluenceSetStructure</sys_name>
         <sys_package display_value="Backup" source="x_264406_backup">0ebc18470781101025e2f9fc7c1ed0be</sys_package>
         <sys_policy>read</sys_policy>
         <sys_scope display_value="Backup">0ebc18470781101025e2f9fc7c1ed0be</sys_scope>
         <sys_update_name>sys_script_include_29394fab07c5901025e2f9fc7c1ed077</sys_update_name>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2020-06-22 07:58:35</sys_updated_on>
+        <sys_updated_on>2020-06-23 10:05:21</sys_updated_on>
     </sys_script_include>
 </record_update>
